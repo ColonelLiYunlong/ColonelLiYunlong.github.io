@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>点击就行</title>
+        <style>
+            canvas{
+                position: absolute;
+                top:1px;
+                left:1px;
+                border: red solid 1px;
+            }
+            #yuantu{
+                position: absolute;
+                top:1px;
+                left:1px;
+                z-index: -2;
+            }
+            #xuanse{
+                position:fixed; 
+				left: 5px; 
+				top: 500px; 
+				background: #FC6; 
+				border:1px solid #F90; 
+            }
+            #placeholder{
+                border: green solid 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            <canvas id="canvas" width="350" height="490">你的辣鸡浏览器并不支持canvas</canvas>
+            <img id="yuantu" src="flower2.jpg" width="350" height="490" />
+        </p>
+        <p>选择填充的树皮，点击区域作画</p>
+        <div id="xuanse">
+            <div id="dangqian">
+                <img id="placeholder" src="#" width="35" height="49" alt="xianzai">
+            </div>
+            <div>
+                <img src="树皮纹理-02.png" width="35" height="49" alt="" onclick="huan(this)" onload="huayuantu()"/>
+                <img src="树皮纹理-03-2.png" width="35" height="49" alt="" onclick="huan(this)"/> 
+                <img src="树皮纹理-04.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-05-2.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-06-2.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-07.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-08.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-09.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-10.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-11.png" width="35" height="49" alt="" onclick="huan(this)"/>
+            </div>
+            <div>
+                <img src="树皮纹理-12.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-13.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-14.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-15.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-16.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-17.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-18.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-19.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-20.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-21.png" width="35" height="49" alt="" onclick="huan(this)"/>
+            </div>
+            <div>
+                <img src="树皮纹理-22.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-23.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-24.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-25.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-26.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-27.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-28.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-29.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-30.png" width="35" height="49" alt="" onclick="huan(this)"/>
+                <img src="树皮纹理-32.png" width="35" height="49" alt="" onclick="huan(this)"/>
+            </div>
+
+        </div>
+        <script type="text/javascript">
+        var crown=[89,170,95,166,103,163,109,161,116,161,121,161,115,155,108,151,100,148,92,147,85,148,78,147,82,141,88,140,93,140,99,142,104,144,99,137,96,129,94,121,96,116,99,114,103,115,103,123,103,127,104,134,107,140,111,146,115,151,118,152,116,145,114,136,113,127,114,118,116,111,121,106,127,102,134,101,140,102,145,104,149,108,153,111,155,115,153,106,148,99,142,95,136,92,142,93,145,93,148,96,151,99,153,101,155,103,157,106,158,110,163,100,168,95,171,92,176,91,175,94,170,99,166,103,162,107,160,113,166,107,172,104,179,101,184,102,190,104,196,106,198,109,203,115,205,119,204,109,202,102,196,98,190,95,195,93,199,96,202,98,205,102,205,105,207,110,209,104,212,100,215,97,219,94,222,94,225,94,223,97,218,99,215,102,213,105,211,110,209,118,216,110,222,107,227,105,233,105,238,107,243,112,246,117,247,124,247,129,246,138,245,143,243,149,241,158,246,153,251,148,256,141,259,135,263,128,264,122,262,115,263,111,267,113,269,116,271,121,270,125,268,129,267,134,263,138,260,143,265,140,271,139,279,137,285,137,290,141,290,145,287,147,283,144,277,144,271,145,266,147,261,148,256,151,251,154,246,158,242,162,253,163,258,164,265,167,268,169,271,171,276,173,281,169,286,163,291,157,295,152,297,147,301,139,304,132,305,122,304,114,301,105,293,98,282,93,273,93,264,95,256,96,256,84,255,74,250,66,242,62,235,61,227,64,220,67,215,71,213,62,210,55,206,51,201,45,194,41,187,39,180,40,172,43,166,46,162,51,157,57,154,65,152,70,148,64,142,59,136,56,129,57,121,61,117,67,113,75,113,82,114,87,114,92,108,86,102,84,96,83,89,82,80,85,73,88,68,93,64,99,62,107,62,114,61,122,62,131,64,138,69,149,73,155,80,164];
+
+        var zuo=[129,139,128,132,128,126,132,122,137,122,141,126,144,132,146,141,146,148,144,153,137,153,132,147];
+
+        var zhong=[171,144,172,134,172,129,174,124,177,120,182,119,185,122,187,125,188,130,188,138,187,145,184,149,179,150,174,148];
+
+        var you=[216,148,216,138,217,133,219,129,222,125,226,123,229,123,232,128,233,133,232,137,231,142,229,146,224,152,219,152];
+
+        var leftup=[81,183,86,177,91,172,96,169,102,167,108,165,115,164,127,164,134,165,143,168,150,172,157,176,164,181,169,188,174,194,175,198,168,195,161,196,156,200,154,203,151,209,152,219,153,227,155,232,158,238,162,242,166,248,161,246,156,244,150,240,144,236,139,230,135,224,131,217,128,208,124,201,118,193,112,188,106,185,99,183,90,180];
+
+        var leftright=[180,195,188,185,196,179,205,172,213,167,225,164,234,164,248,164,255,165,264,170,269,173,276,179,278,183,265,183,258,184,252,186,247,190,242,194,237,203,233,208,230,215,227,221,222,226,218,230,214,235,208,239,203,242,197,245,192,247,187,249,193,241,197,235,201,228,202,220,202,211,202,204,200,199,196,195,189,193];
+
+        var zuodown=[63,279,71,275,79,272,86,270,92,268,101,267,109,266,116,266,124,267,133,269,139,271,146,275,152,279,157,282,161,286,166,292,171,297,174,301,176,307,176,313,176,320,175,327,174,332,171,336,168,340,161,344,154,345,146,343,136,340,131,337,126,333,118,326,112,320,107,313,103,307,99,299,95,293,91,287,86,284,80,280,72,279];
+
+        var rightdown=[181,330,181,314,185,307,189,300,195,292,201,285,208,278,216,272,224,268,234,263,243,261,253,259,260,259,268,258,275,259,280,260,288,263,293,266,297,269,300,274,302,279,295,275,288,275,279,275,271,278,262,283,255,291,250,299,246,308,243,314,239,321,233,328,228,334,223,338,218,341,213,344,205,344,198,344,188,339];
+
+
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var x0,y0;
+        var x,y;
+        var canvasImage = new Image();
+        var drawimage = function(yizu) {
+           ctx.save();
+            ctx.beginPath();
+            ctx.moveTo(yizu[0],yizu[1]);
+		for(var i = 1;i < yizu.length;i+=2){
+			x0 = yizu[i-1];
+			y0 = yizu[i];
+			ctx.lineTo(x0,y0);
+		}
+		ctx.lineTo(yizu[0],yizu[1]);
+            ctx.closePath();
+          ctx.clip();
+          ctx.drawImage(canvasImage, 0, 0,350,490);
+         ctx.restore();
+        };
+        function huan(tu){
+            var wl = tu.getAttribute("src");
+            document.getElementById("placeholder").src = wl;
+            canvasImage.src=wl;
+        };
+        function ispointin(shuzu){
+            ctx.beginPath();
+            ctx.moveTo(shuzu[0],shuzu[1]);
+            for(var i = 1;i<shuzu.length;i+=2){
+                x0=shuzu[i-1];
+                y0=shuzu[i];
+                ctx.lineTo(x0,y0);
+            }
+            ctx.lineTo(shuzu[0],shuzu[1]);
+            ctx.closePath();
+            return ctx.isPointInPath(x,y);
+            
+        };
+        canvas.onclick=function(e){
+            e=e||event;
+            x=e.clientX-canvas.offsetLeft;
+            y=e.clientY-canvas.offsetTop;
+            if(ispointin(crown)){drawimage(crown);}
+
+            if(ispointin(zuo)){drawimage(zuo);}
+
+            if(ispointin(zhong)){drawimage(zhong);}
+
+            if(ispointin(you)){drawimage(you);}
+
+            if(ispointin(leftup)){drawimage(leftup);}
+
+            if(ispointin(leftright)){drawimage(leftright);}
+
+            if(ispointin(zuodown)){drawimage(zuodown);}
+
+            if(ispointin(rightdown)){drawimage(rightdown);}
+        };
+        function huayuantu(){
+            var img=document.getElementById("yuantu");
+            ctx.drawImage(img,0,0);
+        }
+
+        </script>
+    </body>
+</html>
