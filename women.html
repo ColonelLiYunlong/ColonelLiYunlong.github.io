@@ -172,9 +172,8 @@
         }
         function saveImageInfo(){
             var qrcode = document.createElement("img");
-            qrcode.src ="qrcode.jpg"
+            qrcode.src ="qrco.jpg"
             ctx.drawImage(qrcode,0,0,100,100);
-            alert("确认？");
             var image = canvas.toDataURL("image/png");  
             var w=window.open('about:blank','image from canvas');  
             w.document.write("<img src='"+image+"' alt='from canvas'/>");
