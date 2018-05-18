@@ -30,7 +30,7 @@
     </head>
     <body>
         <p>
-            <canvas id="canvas" width="350" height="490">你的辣鸡浏览器并不支持canvas</canvas>
+            <canvas id="canvas" width="350" height="490" onload="huayuantu()">你的辣鸡浏览器并不支持canvas</canvas>
             <img id="yuantu" src="women.jpg" width="350" height="490" />
         </p>
         <p>选择填充的树皮，点击区域作画</p>
@@ -171,9 +171,7 @@
             ctx.drawImage(img,0,0);
         }
         function saveImageInfo(){
-            var qrcode = document.createElement("img");
-            qrcode.src ="qrco.jpg"
-            ctx.drawImage(qrcode,0,0,100,100);
+            drawqrcode();
             var image = canvas.toDataURL("image/png");  
             var w=window.open('about:blank','image from canvas');  
             w.document.write("<img src='"+image+"' alt='from canvas'/>");
@@ -187,6 +185,13 @@
                       element.attachEvent('on'+type, handler);  
                    }  
             }
+        function drawqrcode(){
+            var qrcode = document.createElement("img");
+            ctx.save();
+            qrcode.src ="qrco.jpg";
+            ctx.drawImage(qrcode,0,0,100,100);
+            ctx.restore();
+        }
         var saveButton = document.getElementById("saveImageBtn");  
         bindButtonEvent(saveButton, "click", saveImageInfo); 
         
