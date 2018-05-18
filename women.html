@@ -172,11 +172,12 @@
         }
         function saveImageInfo(){
             var qrcode = document.createElement("img");
-            qrcode.src ="qrcode.bmp"
+            qrcode.src ="qrcode.jpg"
             ctx.drawImage(qrcode,0,0,100,100);
             var image = canvas.toDataURL("image/png");  
             var w=window.open('about:blank','image from canvas');  
-            w.document.write("<img src='"+image+"' alt='from canvas'/>");  
+            w.document.write("<img src='"+image+"' alt='from canvas'/>");
+            w.document.write("<p>长按后保存分享至朋友圈<P>")  
         }
         function bindButtonEvent(element, type, handler)  
             {  
@@ -188,18 +189,7 @@
             }
         var saveButton = document.getElementById("saveImageBtn");  
         bindButtonEvent(saveButton, "click", saveImageInfo); 
-        (function (doc, win) {
-        var docEl = doc.documentElement;
-        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
-        recalc = function () {
-            var clientWidth = docEl.clientWidth;
-            if (!clientWidth) return;
-            docEl.style.fontSize = 50 * (clientWidth / 375) + 'px';
-        };
-        if (!doc.addEventListener) return;
-        win.addEventListener(resizeEvt, recalc, false);
-        doc.addEventListener('DOMContentLoaded', recalc, false);
-    }(document,window));
+        
 
         </script>
     </body>
