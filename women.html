@@ -41,7 +41,7 @@
         <div id="xuanse">
         <div id="dangqian">
             <img id="placeholder" src="#" width="35" height="49" alt="xianzai">
-            <button id="saveImageBtn">分享</button>
+
         </div>
                 <div>
                     <img src="树皮纹理-02.png" width="35" height="49" alt="" onclick="huan(this)" onload="huayuantu()"/>
@@ -174,30 +174,9 @@
             img.src="women.jpg"
             ctx.drawImage(img,0,0);
         }
-        function saveImageInfo(){
-            drawqrcode();
-            /*var image = canvas.toDataURL("image/png");  
-            var w=window.open('about:blank','image from canvas');  
-            w.document.write("<img src='"+image+"' alt='from canvas'/>");
-            w.document.write("<p>长按后保存分享至朋友圈<P>")  */
-        }
-        function bindButtonEvent(element, type, handler)  
-            {  
-                   if(element.addEventListener) {  
-                      element.addEventListener(type, handler, false);  
-                   } else {  
-                      element.attachEvent('on'+type, handler);  
-                   }  
-            }
-        function drawqrcode(){
-            var qrcode = document.createElement("img");
-            ctx.save();
-            qrcode.src ="qrco.jpg";
-            ctx.drawImage(qrcode,0,0,100,100);
-            ctx.restore();
-        }
-        var saveButton = document.getElementById("saveImageBtn");  
-        bindButtonEvent(saveButton, "click", saveImageInfo); 
+
+
+
         
 
         </script>
