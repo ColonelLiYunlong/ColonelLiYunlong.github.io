@@ -1,39 +1,53 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>点击就行</title>
-        <style>
-            canvas{
-                position: absolute;
-                top:1px;
-                left:1px;
-                border: red solid 1px;
-            }
-            #yuantu{
-                position: absolute;
-                top:1px;
-                left:1px;
-                z-index: -2;
-            }
-            #xuanse{
-                position:fixed; 
-				left: 5px; 
-				top: 500px; 
-				background: #FC6; 
-				border:1px solid #F90; 
-            }
-            #placeholder{
-                border: green solid 3px;
-            }
-        </style>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=0.87; maximum-scale=1.0; user-scalable=0;">
+            <meta name="apple-mobile-web-app-capable" content="yes">
+            <meta name="apple-mobile-web-app-status-bar-style" content="black">
+            <title>选择你想要的树皮，点击画中的区域</title>
+            <style>
+                body {
+                font-family: Helvetica, sans-serif;
+                font-size: 12px;
+                margin: 0px;
+                padding: 0px;
+                }
+                canvas{
+                    position: absolute;
+                    top:-2px;
+                    left:-2px;
+                    border: red solid 1px;
+                }
+                #yuantu{
+                    position: absolute;
+                    top:1px;
+                    left:1px;
+                    z-index: -2;
+                }
+                #xuanse{
+                    position:fixed; 
+                    left: 5px; 
+                    top: 490px; 
+                    background: #FC6; 
+                    border:1px solid #F90; 
+                }
+                #placeholder{
+                    border: green solid 3px;
+                }
+                img{
+                    padding: 0px;
+                    border: 0px;
+                    margin: -2px
+                }
+            </style>
     </head>
     <body>
         <p>
             <canvas id="canvas" width="350" height="490">你的辣鸡浏览器并不支持canvas</canvas>
             <img id="yuantu" src="flower2.jpg" width="350" height="490" />
         </p>
-        <p>选择填充的树皮，点击区域作画</p>
+
         <div id="xuanse">
             <div id="dangqian">
                 <img id="placeholder" src="#" width="35" height="49" alt="xianzai">
